@@ -6,7 +6,7 @@ for mac.
 Run the following command in a folder you'd like to contain your drupal install. For the rest
 of this readme, we will pretend you ran the command in ~/DrupalQuickStart
 
-> wget https://raw.githubusercontent.com/bmarti44/DrupalQuickStart/master/quick-start-mac.sh && chmod +x quick-start-mac.sh && ./quick-start-mac.sh
+> https://github.com/bmarti44/DrupalQuickStart.git && chmod +x quick-start-mac.sh && ./quick-start-mac.sh
 
 
 # So what just happened?
