@@ -9,7 +9,7 @@ vagrant box add ubuntu/trusty64
 mkdir drupal
 mkdir docker
 cd drupal
-git clone --branch 8.0.x http://git.drupal.org/project/drupal.git .
+git clone --branch 8.0.x https://github.com/drupal/drupal.git .
 git checkout tags/8.0.0-beta12
 mkdir sites/default/files
 cp sites/default/default.services.yml sites/default/services.yml
