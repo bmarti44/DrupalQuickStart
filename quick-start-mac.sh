@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#brew update && brew uninstall brew-cask && brew install brew-cask && brew cleanup && brew cask cleanup
+brew update && brew uninstall brew-cask && brew install brew-cask && brew cleanup && brew cask cleanup
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-manager
