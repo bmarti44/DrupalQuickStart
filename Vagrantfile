@@ -75,12 +75,12 @@ Vagrant.configure(2) do |config|
     d.build_image "/docker/apache-php"
     d.build_image "/docker/mariadb/5.5"
 
-    d.run "turner-mariadb",
+    d.run "quickstart-mariadb",
       image: "mariadb",
       args: "-p 3306:3306 -e MYSQL_ROOT_PASSWORD=root"
-    d.run "turner-sdi",
+    d.run "quickstart-apache",
       image: "tutum/apache-php",
-      args: "-p 80:80 -e ALLOW_OVERRIDE=true -v /var/www/html:/app --link turner-mariadb:db"
+      args: "-p 80:80 -e ALLOW_OVERRIDE=true -v /var/www/html:/app --link quickstart-mariadb:db"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
@@ -88,6 +88,6 @@ Vagrant.configure(2) do |config|
       do
         sleep 1
     done
-    docker restart turner-sdi
+    docker restart quickstart-apache
   SHELL
 end
