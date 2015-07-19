@@ -12,6 +12,6 @@ cd drupal
 git clone --branch 8.0.x http://git.drupal.org/project/drupal.git .
 git checkout tags/8.0.0-beta12
 cd ../docker
-git clone https://github.com/tutumcloud/apache-php.git
+git clone https://github.com/bmarti44/apache-php.git
 git clone https://github.com/docker-library/mariadb.git
 vagrant up
