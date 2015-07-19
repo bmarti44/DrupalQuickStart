@@ -11,6 +11,9 @@ mkdir docker
 cd drupal
 git clone --branch 8.0.x http://git.drupal.org/project/drupal.git .
 git checkout tags/8.0.0-beta12
+mkdir sites/default/files
+cp sites/default/default.services.yml sites/default/services.yml
+cp sites/default/default.settings.php sites/default/settings.php
 cd ../docker
 git clone https://github.com/bmarti44/apache-php.git
 git clone https://github.com/docker-library/mariadb.git

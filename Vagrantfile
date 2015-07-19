@@ -72,8 +72,7 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "docker" do |d|
-    d.build_image "https://github.com/bmarti44/apache-php.git", args: "-t bmarti44/apache-php"
-    # d.build_image "/docker/mariadb/5.5"
+    d.build_image "/docker/apache-php", args: "-t bmarti44/apache-php"
 
     d.run "quickstart-mariadb",
       image: "mariadb",
@@ -88,6 +87,6 @@ Vagrant.configure(2) do |config|
       do
         sleep 1
     done
-    #docker restart quickstart-apache
+    docker restart quickstart-apache
   SHELL
 end
