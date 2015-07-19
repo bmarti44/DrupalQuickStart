@@ -7,7 +7,7 @@ Run the following command in a folder you'd like to contain your drupal install.
 of this readme, we will pretend you ran the command in ~/DrupalQuickStart
 
 wget https://raw.githubusercontent.com/bmarti44/DrupalQuickStart/master/quick-start-mac.sh && chmod +x quick-start-mac.sh && ./quick-start-mac.sh
-================================================================
+
 
 # So what just happened?
 After the command finishes, you should be able to go to http://localhost:8080 and see your
