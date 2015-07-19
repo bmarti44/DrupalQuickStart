@@ -72,15 +72,15 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "docker" do |d|
-    d.build_image "/docker/apache-php"
-    d.build_image "/docker/mariadb/5.5"
+    d.build_image "https://github.com/bmarti44/apache-php.git", args: "-t bmarti44/apache-php"
+    # d.build_image "/docker/mariadb/5.5"
 
     d.run "quickstart-mariadb",
       image: "mariadb",
-      args: "-p 3306:3306 -e MYSQL_ROOT_PASSWORD=root"
+      args: "-it -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root"
     d.run "quickstart-apache",
-      image: "tutum/apache-php",
-      args: "-p 80:80 -e ALLOW_OVERRIDE=true -e APACHE_RUN_USER=quickstart -e APACHE_RUN_GROUP=quickstart -v /var/www/html:/app --link quickstart-mariadb:db"
+      image: "bmarti44/apache-php",
+      args: "-it -p 80:80 -e APACHE_LOG_DIR=/var/log/apache2 -e APACHE_LOCK_DIR=/var/lock/apache2 -e APACHE_RUN_DIR=/var/run/apache2 -e APACHE_PID_FILE=/var/run/apache2/apache2.pid -e TERM=dumb -e ALLOW_OVERRIDE=true -e APACHE_RUN_USER=quickstart -e APACHE_RUN_GROUP=quickstart -v /var/www/html:/var/www/html --link quickstart-mariadb:db"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
@@ -88,6 +88,6 @@ Vagrant.configure(2) do |config|
       do
         sleep 1
     done
-    docker restart quickstart-apache
+    #docker restart quickstart-apache
   SHELL
 end
