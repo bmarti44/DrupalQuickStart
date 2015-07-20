@@ -79,7 +79,7 @@ Vagrant.configure(2) do |config|
       args: "-it -p 3306:3306 -e MYSQL_DATABASE=quickstart -e MYSQL_ROOT_PASSWORD=root"
     d.run "quickstart-apache",
       image: "bmarti44/apache-php",
-      args: "-it -p 80:80 -e TERM=dumb -e ALLOW_OVERRIDE=true -e APACHE_RUN_USER=quickstart -e APACHE_RUN_GROUP=quickstart -v /var/www/html:/var/www/html --link quickstart-mariadb:mariadb asdfasdf"
+      args: "-it -p 80:80 -e TERM=dumb -e ALLOW_OVERRIDE=true -e APACHE_RUN_USER=quickstart -e APACHE_RUN_GROUP=quickstart -v /var/www/html:/var/www/html --link quickstart-mariadb:mariadb"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
