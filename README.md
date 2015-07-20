@@ -1,6 +1,6 @@
 # Drupal 8 Quick Start
 Drupal 8 quick start with vagrant, virtual box, and docker. This currrently only works
-for mac.
+for mac (I also added an ubuntu script, please test it out and let me know how it works).
 
 # Getting Started
 Run the following command in a folder you'd like to contain your drupal install. For the rest
