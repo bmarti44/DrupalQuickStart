@@ -6,8 +6,11 @@ for mac.
 Run the following command in a folder you'd like to contain your drupal install. For the rest
 of this readme, we will pretend you ran the command in ~/DrupalQuickStart
 
+For mac
 > git clone https://github.com/bmarti44/DrupalQuickStart.git . && chmod +x quick-start-mac.sh && ./quick-start-mac.sh
 
+For ubuntu
+> git clone https://github.com/bmarti44/DrupalQuickStart.git . && chmod +x quick-start-ubuntu-14.04.sh && ./quick-start-ubuntu-14.04.sh
 
 # So what just happened?
 After the command finishes, you should be able to go to http://localhost:8080 and see your
